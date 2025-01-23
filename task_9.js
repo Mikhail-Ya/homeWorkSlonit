@@ -13,13 +13,13 @@ function mySlice (arr,start = 0,end = arr.length - 1) {
 // analog of the built-in function indexOf
 function myIndexOf (arr,item,from = 0) {
     if( from >= arr.length || arr.length <= 0 ) return -1;
-    let longSearch = arr.length
-    if(0 > from && 0 < from + longSearch) {
-        from += longSearch
-    } else if(0 > from + longSearch) {
+
+    if(0 > from && 0 < from + arr.length) {
+        from += arr.length
+    } else if(0 > from + arr.length) {
         from = 0
     }
-    for (let i = from; i < longSearch; i++){
+    for (let i = from; i < arr.length; i++){
         if(item === arr[i]){
             return i
         }
